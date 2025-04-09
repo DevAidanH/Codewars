@@ -24,13 +24,6 @@ directions = {
     "right": (0,1)
 }
 
-opposites = {
-    "up": "down",
-    "down": "up",
-    "left": "right",
-    "right": "left"
-}
-
 def findX(grid):
     positions = []
     for r in range(len(grid)):
@@ -40,7 +33,7 @@ def findX(grid):
     return positions
 
 def bounds(grid, r, c):
-    return 0 <= r < len(grid) and 0 <= c <= len(grid[0])
+    return 0 <= r < len(grid) and 0 <= c < len(grid[0])
 
 def findValidDirections(ch):
     if ch == "-":
@@ -65,7 +58,7 @@ def checkValidTurn(prevDir, currDir, ch):
 
 def dfs(grid, r, c, visited, prevDir, target, pathCount):
     if(r,c) == target:
-        return pathCount == sum(1 for row in grid for ch in row if ch in {'-', '|', '+', 'X'}) - 1
+        return pathCount == sum(1 for row in grid for ch in row if ch in {"-", "|", "+", "X"}) - 1
     
     visited.add((r,c))
     ch = grid[r][c]
