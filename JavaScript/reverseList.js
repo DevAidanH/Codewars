@@ -1,9 +1,9 @@
 function reverseSeq(n){
-    output = []
+    o = []
     for(let i = n; i > 0; i--){
-        output.push(i)
+        o.push(i)
     }
-    return output
+    return o
 }
 
 console.log(reverseSeq(5))
